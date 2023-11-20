@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <h1 class="fw-bold display-4">Your stock portfolio</h1>
+    <br>
+    <div class="container">
+        <h4 class="py-2">The following are your stock holdings:</h4>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Stock Symbol</th>
+                    <th>Shares</th>
+                    <th>Market Price</th>
+                    <th>Holding Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in user_stocks %}
+                    <tr>
+                        <td>{{ stock["symbol"] }}</td>
+                        <td>{{ stock["shares"] }}</td>
+                        <td>$ {{ stock["stock_price"] | usd}}</td>
+                        <td>$ {{ stock["holding_value"] | usd}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <p class="text-start fs-4"><span class="fw-bold">Account balance:</span> $ {{ user_info[0]["cash"] | usd}}</p>
+        <p class="text-start fs-4"><span class="fw-bold">Net value of portfolio:</span> $ {{ portfolio_value | usd}}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock Quote
+{% endblock %}
+
+{% block main %}
+    <div class="fs-3">
+        <p class="mb-3">
+            <span class="fs-2 fw-bold">Stock: </span> <a class="text-decoration-none">{{ stock["name"] }}</a>
+        </p>
+        <p class="mb-3">
+            <span class="fs-2 fw-bold">Price: </span> $ {{ stock["price"] | usd}}
+        </p>
+    </div>
+{% endblock %}
