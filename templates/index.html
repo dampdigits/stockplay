@@ -24,14 +24,14 @@
                     <tr>
                         <td>{{ stock["symbol"] }}</td>
                         <td>{{ stock["shares"] }}</td>
-                        <td>$ {{ stock["stock_price"] | usd}}</td>
-                        <td>$ {{ stock["holding_value"] | usd}}</td>
+                        <td>{{ stock["stock_price"] | usd}}</td>
+                        <td>{{ stock["holding_value"] | usd}}</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
         <br>
-        <p class="text-start fs-4"><span class="fw-bold">Account balance:</span> $ {{ user_info[0]["cash"] | usd}}</p>
-        <p class="text-start fs-4"><span class="fw-bold">Net value of portfolio:</span> $ {{ portfolio_value | usd}}</p>
+        <p class="text-start fs-4"><span class="fw-bold">Account balance:</span> {{ user_info[0]["cash"] | usd}}</p>
+        <p class="text-start fs-4"><span class="fw-bold">Net value of portfolio:</span> {{ portfolio_value | usd}}</p>
     </div>
 {% endblock %}

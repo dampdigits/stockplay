@@ -23,7 +23,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for transaction in history|reverse %}
+                {% for transaction in transactions|reverse %}
                     <tr>
                         <td>{{ transaction["date"] }}</td>
                         <td>{{ transaction["time"] }}</td>

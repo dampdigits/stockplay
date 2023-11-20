@@ -10,7 +10,16 @@
             <span class="fs-2 fw-bold">Stock: </span> <a class="text-decoration-none">{{ stock["name"] }}</a>
         </p>
         <p class="mb-3">
-            <span class="fs-2 fw-bold">Price: </span> $ {{ stock["price"] | usd}}
+            <span class="fs-2 fw-bold">Price: </span> {{ stock["price"] | usd}}
         </p>
     </div>
+    <form action="/buy" method="post">
+        <div class="mb-3">
+            <input required autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of shares" type="number">
+        </div>
+        <div class="mb-3">
+            <input required autocomplete autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Confirm stock symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy stock</button>
+    </form>
 {% endblock %}
